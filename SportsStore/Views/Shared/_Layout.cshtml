@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="~/lib/twitter-bootstrap/css/*.min.css" />
+    <link rel="stylesheet" asp-href-include="~/lib/font-awesome/css/*.css" />
+    <title>SportsStore</title>
+</head>
+<body>
+    <div class="navbar navbar-expand-sm bg-dark navbar-dark" role="navigation">
+        <a class="navbar-light" href="#">Sports Store</a>
+        <div class="float-right">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </div>
+    <div class="row">
+        <div id="categories" class="col-xl-3">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+        <div class="col-xl-8">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
