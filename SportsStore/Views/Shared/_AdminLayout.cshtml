@@ -15,7 +15,12 @@
     <script asp-src-include="~/lib/jquery-validation-unobtrusive/**/*.min.js"></script>
 </head>
 <body class="card">
-    <div class="card-header"><h4>@ViewBag.Title</h4></div>
+    <div class="card-header">
+        <h4>
+            @ViewBag.Title
+            <a class="btn btn-sm btn-primary float-right" asp-action="Logout" asp-controller="Account">Log Out</a>
+        </h4>
+    </div>
     <div class="card-body">
         @if (TempData["message"] != null)
         {
